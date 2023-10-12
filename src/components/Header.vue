@@ -5,7 +5,7 @@
             <div class="leftSide">
                 <img @click="toggleDropDown" src="../img/applelogoWhite.png" alt="">
                 <div v-if="isDropDownVisible" class="dropdownMenu">
-                    <span>About Me</span>
+                    <span @click="openModal">About Me</span>
                     <span>Contact</span>
                     <span>My Projects</span>
                 </div>
@@ -35,8 +35,9 @@ export default {
     },
     data() {
         return {
+            isDropDownVisible : false,
             currentDateTime: '',
-            isModalVisible: true, // Add this property to manage dropdown visibility
+            isModalVisible: false, // Add this property to manage dropdown visibility
         };
     },
     mounted() {
@@ -59,6 +60,7 @@ export default {
             this.isDropDownVisible = !this.isDropDownVisible; // Toggle dropdown visibility
         },
         openModal() {
+            this.isDropDownVisible = false;
         this.isModalVisible = true;
       },
       closeModal() {
@@ -183,7 +185,7 @@ header {
 }
 
 .dropdownMenu {
-    font-size : 1px;
+    font-size : 13px;
     position: absolute;
     top: 100%;
     left: 0;

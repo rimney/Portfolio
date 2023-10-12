@@ -2,7 +2,9 @@
     <div class="apps">
         <div class="icons">
             <div class="icon">
-                <img src="../img/adobe.png" alt="">
+                <img @click="openResumeModal" src="../img/adobe.png" alt="">
+                <resumeModal v-show="isResumeModalVisible" @close="closeResumeModal"></resumeModal>
+
                 <span>Resume</span>
             </div>
             <div class="icon">
@@ -14,11 +16,11 @@
                 <span>Contact</span>
             </div>
             <div class="icon">
-                <img src="../img/linkedin.png" alt="">
+                <img @click="goToLinkedin" src="../img/linkedin.png" alt="">
                 <span>LinkedIn</span>
             </div>
             <div class="icon">
-                <img src="../img/github.png" alt="">
+                <img @click="goToGithub" src="../img/github.png" alt="">
                 <span>GitHub</span>
             </div>
 
@@ -26,8 +28,35 @@
     </div>
 </template>
 <script>
+import resumeModal from './resumeModal.vue'
 export default {
+    data() {
+        return {
+            isResumeModalVisible : false
+        }
+    },
+    components : {
+        resumeModal,
+    },
     name: 'MyApps',
+    methods : {
+        openResumeModal() {
+        this.isResumeModalVisible = true;
+      },
+      closeResumeModal() {
+        this.isResumeModalVisible = false;
+      },
+      goToLinkedin()
+      {
+        window.open('https://www.google.com', '_blank');
+
+      },
+      goToGithub()
+      {
+        window.open('https://www.google.com', '_blank');
+
+      },
+    }
 }
 </script>
 <style scoped>

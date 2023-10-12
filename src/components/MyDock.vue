@@ -16,12 +16,7 @@
           <div class="dockIcon">
             <img src="../img/darkmode.png" alt="">
           </div>
-          <div class="dockIcon">
-            <img src="../img/finder.png" alt="">
-          </div>
-          <div class="dockIcon">
-            <img src="../img/finder.png" alt="">
-          </div>
+
 
 
         </div>
@@ -37,17 +32,16 @@
   </script>
   
   <style scoped> 
-  .Dock{
+.Dock {
     border-radius: 14px;
-    height: 70px;
-    width : 30%;
+    height: 69px;
+    width: 390px;
     background-color: rgba(0, 0, 0, 0.58);
-    position: absolute;
-    bottom:3px;
-  right:35%;
-
-  /* And if you want the div to be full-width: */
-  }
+    position: fixed;
+    bottom: 11px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 #emailimg
 {
   width : 58px;
@@ -86,14 +80,14 @@
 
   .dockIcon:hover img {
     transform: scale(1);
-    margin: 0 1em;
+    /* margin: 1 1em; */
     transition: transform 0.3s ease; /* Added transition property */
 }
 
 .dockIcon:hover img {
     transform: scale(1.2);
-    margin: 0 1em;
-    transition: transform 0.3s ease; /* Added transition property */
+    /* margin: 0 1em; */
+    transition: transform 0.1s ease; /* Added transition property */
 }
   </style>
   
