@@ -49,7 +49,7 @@ export default {
     background-color: white;
     border-radius: 0.5em;
     padding: 1em;
-    /* margin: auto; */
+    margin: auto;
     background-color: rgba(36, 36, 36, 36);
     border: white solid 0.5px;
 
@@ -57,7 +57,7 @@ export default {
 
 .header {
     width: 500px;
-    height: 12px;
+    height: 20px;
     display: flex;
     margin-bottom: 30px;
     align-items: center;
@@ -103,6 +103,7 @@ export default {
 .modalBody {
     width : 100%;
     height:  650px;
+    /* background-color: green; */
 }
 .modalBody img {
     width : 100%;

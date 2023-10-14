@@ -1,4 +1,5 @@
 <template>
+
   <div class="cocntainer">
   <Header></Header>
     <MyApps></MyApps>
@@ -26,8 +27,8 @@ body
 {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   overflow:hidden;
-  background-image: url('img/wall.jpg');
-  background-size: 2010px 1080px;
+  background-image: url('img/wall.png');
+  background-size: 1900px 1080px;
   background-repeat: no-repeat;
 
 }

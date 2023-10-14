@@ -4,7 +4,6 @@
             <div class="icon">
                 <img @click="openResumeModal" src="../img/adobe.png" alt="">
                 <resumeModal v-show="isResumeModalVisible" @close="closeResumeModal"></resumeModal>
-
                 <span>Resume</span>
             </div>
             <div class="icon">
@@ -12,7 +11,9 @@
                 <span>Projects</span>
             </div>
             <div class="icon">
-                <img src="../img/contact.png" alt="">
+                <img @click="openContactModal" src="../img/contact.png" alt="">
+                <contactModal v-show="isContactModalVisible" @close="closeContactModal"></contactModal>
+                
                 <span>Contact</span>
             </div>
             <div class="icon">
@@ -28,15 +29,18 @@
     </div>
 </template>
 <script>
-import resumeModal from './resumeModal.vue'
+import resumeModal from './resumeModal.vue';
+import contactModal from './contactModal.vue';
 export default {
     data() {
         return {
-            isResumeModalVisible : false
+            isResumeModalVisible : false,
+            isContactModalVisible : true,
         }
     },
     components : {
         resumeModal,
+        contactModal,
     },
     name: 'MyApps',
     methods : {
@@ -45,6 +49,12 @@ export default {
       },
       closeResumeModal() {
         this.isResumeModalVisible = false;
+      },
+        openContactModal() {
+        this.isContactModalVisible = true;
+      },
+      closeContactModal() {
+        this.isContactModalVisible = false;
       },
       goToLinkedin()
       {
