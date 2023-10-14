@@ -7,30 +7,33 @@
                     <div class="closeY" @click="close"></div>
                     <div class="closeY" @click="close"></div>
                 </div>
-                <span id="about">Contact</span>
+                <span id="about">Projects</span>
             </div>
             <div class="modalBody">
-                <div class="imgName">
-                <div class="myimg">
-                    <img src="../img/rimney.jpeg" alt="">
-                    <h3 id="me">RIYAD MNEY</h3>
+                <div class="projects">
+                    <div class="project">
+                        <div class="projectContainer">
+                            <div class="projectData">
+                                <div class="projectTitle">
+
+                                </div>
+                                <div class="projectDescription">
+
+                                </div>
+                            </div>
+                            <div class="projectImage">
+                                <!-- <img src="" alt=""> -->
+                                <div class="img"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project">
+                    </div>
+                    <div class="project">
+                    </div>
+                    <div class="project">
+                    </div>
                 </div>
-            </div>
-            <div class="contactInfo">
-                <div class="contactTitle">
-                    <span>Email</span>
-                    <span>Discord</span>
-                    <span>Number</span>
-                    <span>LinkedIn</span>
-                </div>
-                <div class="contactData">
-                    <span>Rimney13@gmail.com</span>
-                    <span>Rimney</span>
-                    <span>(+212)0680344281</span>
-                    <span>Rimney13</span>
-                    
-                </div>
-            </div>
             </div>
 
         </div>
@@ -44,7 +47,7 @@ export default {
             this.$emit("close");
         },
     },
-    
+
 };
 </script>
   
@@ -64,17 +67,20 @@ export default {
 
 
 .modal-inner {
-    width: 300px;
+    width: 500px;
+    height: 670px;
     background-color: white;
     border-radius: 0.5em;
     padding: 1em;
+    margin: auto;
     background-color: rgba(36, 36, 36, 36);
     border: white solid 0.5px;
+
 }
 
 .header {
-    width: 300px;
-    height: 12px;
+    width: 500px;
+    height: 20px;
     display: flex;
     margin-bottom: 30px;
     align-items: center;
@@ -82,7 +88,7 @@ export default {
 
 .buttons {
     display: flex;
-    padding-right: 70px;
+    padding-right: 160px;
 }
 
 
@@ -118,73 +124,63 @@ export default {
 }
 
 .modalBody {
-    width : 100%;
-    height:  400px;
+    width: 100%;
+    height: 600px;
+    overflow: scroll;
 }
 
-.imgName
-{
+.project {
+    margin-top: 20px;
+    background-color: rgb(50, 50, 50);
     width: 100%;
     height: 200px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    border-radius: 14px;
+    margin-bottom: 20px;
 }
 
-.myimg
-{
-    color : rgb(147, 147, 147);
+.projectContainer {
+    /* background-color: red; */
 
     display: flex;
-    border-radius: 100px;
-    width: 150px;
-    height: 160px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    
-
-
-}
-.myimg img
-{
-    border-radius: 100px;
-    width : 150px;
-    height: 150px;
-}
-
-.contactInfo
-{
-    width : 100%;
-    height : 200px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.contactTitle
-{
-    padding-top: 0.5px;
-    font-size: 10px;
-    width: 100px;
+    width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-end;
-    
 }
 
-.contactData
-{
-    color : rgb(147, 147, 147);
-    font-size: 12px;
-    width : 190px;
+.projectData {
+
+    display: flex;
+    width: 50%;
     height: 100%;
-    display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-    
 }
 
+.projectTitle {
+    width: 100%;
+    height: 50%;
+    background-color: red;
+}
+
+.projectDescription {
+    width: 100%;
+    height: 50%;
+    background-color: blue;
+}
+
+.projectImage
+{
+    background-color: green;
+    width : 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.projectImage .img
+{
+    border-radius: 120px;
+    width : 180px;
+    height: 180px;
+    background-color: black;
+}
 </style>

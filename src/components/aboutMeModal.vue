@@ -102,7 +102,6 @@ export default {
 
 .closeY {
     cursor: pointer;
-
     margin-right: 5px;
     font-size: 12px;
     color: white;

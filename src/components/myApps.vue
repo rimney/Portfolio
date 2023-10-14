@@ -7,7 +7,8 @@
                 <span>Resume</span>
             </div>
             <div class="icon">
-                <img src="../img/finder.png" alt="">
+                <img  @click="openProjectsModal" src="../img/finder.png" alt="">
+                <projectsModal v-show="isProjectsModalVisible" @close="closeProjectsModal"></projectsModal>
                 <span>Projects</span>
             </div>
             <div class="icon">
@@ -31,17 +32,21 @@
 <script>
 import resumeModal from './resumeModal.vue';
 import contactModal from './contactModal.vue';
+import ProjectsModal from './projectsModal.vue';
 export default {
     data() {
         return {
             isResumeModalVisible : false,
-            isContactModalVisible : true,
+            isContactModalVisible : false,
+            isProjectsModalVisible : true,
+            
         }
     },
     components : {
-        resumeModal,
-        contactModal,
-    },
+    resumeModal,
+    contactModal,
+    ProjectsModal
+},
     name: 'MyApps',
     methods : {
         openResumeModal() {
@@ -49,6 +54,12 @@ export default {
       },
       closeResumeModal() {
         this.isResumeModalVisible = false;
+      },
+        openProjectsModal() {
+        this.isProjectsModalVisible = true;
+      },
+      closeProjectsModal() {
+        this.isProjectsModalVisible = false;
       },
         openContactModal() {
         this.isContactModalVisible = true;
@@ -101,7 +112,6 @@ export default {
 }
 
 .icon {
-    cursor:pointer;
 
     height: 100px;
     font-size: 15px;
