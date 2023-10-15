@@ -38,7 +38,7 @@ export default {
         return {
             isResumeModalVisible : false,
             isContactModalVisible : false,
-            isProjectsModalVisible : true,
+            isProjectsModalVisible : false,
             
         }
     },
@@ -123,6 +123,24 @@ export default {
 }
 
 
+@media screen and (max-width: 640px) {
 
+.apps {
+    width: 100%;
+    height: 800px;
+    /* background-color: green; */
+    margin-top: 2%;
+}
+
+.icons{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+}
 
 </style>

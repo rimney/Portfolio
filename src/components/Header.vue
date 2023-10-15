@@ -72,6 +72,8 @@ export default {
 
 
 <style scoped>
+
+
 header {
     position: fixed;
     /* Set the position to fixed */
@@ -205,5 +207,15 @@ header {
 .dropdownMenu span:hover
 {
     background-color: rgba(53, 21, 238);
+}
+
+@media screen and (max-width: 640px) {
+  header {
+    display: none;
+  }
+  .osHeader
+  {
+    display: none;
+  }
 }
 </style>

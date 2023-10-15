@@ -1,186 +1,246 @@
 <template>
-    <div class="modal">
-        <div class="modal-inner">
-            <div class="header">
-                <div class="buttons">
-                    <div class="closeX" @click="close"><span>x</span></div>
-                    <div class="closeY" @click="close"></div>
-                    <div class="closeY" @click="close"></div>
-                </div>
-                <span id="about">Projects</span>
-            </div>
-            <div class="modalBody">
-                <div class="projects">
-                    <div class="project">
-                        <div class="projectContainer">
-                            <div class="projectData">
-                                <div class="projectTitle">
-
-                                </div>
-                                <div class="projectDescription">
-
-                                </div>
-                            </div>
-                            <div class="projectImage">
-                                <!-- <img src="" alt=""> -->
-                                <div class="img"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project">
-                    </div>
-                    <div class="project">
-                    </div>
-                    <div class="project">
-                    </div>
-                </div>
-            </div>
-
+  <div class="modal">
+    <div class="modal-inner">
+      <div class="header">
+        <div class="buttons">
+          <div class="closeX" @click="close"><span>x</span></div>
+          <div class="closeY" @click="close"></div>
+          <div class="closeY" @click="close"></div>
         </div>
+        <span id="about">Projects</span>
+      </div>
+      <div class="modalBody">
+        <div class="projects">
+          <div class="project" v-for="project in array" :key="project.projectName">
+            <div class="projectContainer">
+              <div class="projectData">
+                <div class="projectTitle">
+                  <h2>{{ project.projectName }}</h2>
+                </div>
+                <div class="projectDescription">
+                  <p>{{ project.projectDescription }}</p>
+                  <a :href="project.projectLink">Read More...</a>
+                </div>
+              </div>
+              <div class="projectImage">
+                <img :src="project.imagePath" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
+  import images from '../img/images.js';
 export default {
-    methods: {
-        close() {
-            this.$emit("close");
-        },
+ data() {
+    return {
+      array: [
+        {
+          projectName: "Inception",
+          projectDescription:
+            "Inception is a project that focuses on containerization using Docker. The main objective of this project is to create a LEMP stack that has WordPress on it hosted by NGINX and PHP FPM. It also has a MariaDB that communicates with it using Docker network.",
+          projectLink: "https://github.com/rimney",
+          imagePath: images.inception
+        }
+        ,
+        {
+          projectName: "Ft_transendance",
+          projectDescription:
+            "Inception is a project that focuses on containerization using Docker. The main objective of this project is to create a LEMP stack that has WordPress on it hosted by NGINX and PHP FPM. It also has a MariaDB that communicates with it using Docker network.",
+          projectLink: "https://github.com/rimney",
+          imagePath: images.webserv
+        }
+        ,
+        {
+          projectName: "Webserv",
+          projectDescription:
+            "Inception is a project that focuses on containerization using Docker. The main objective of this project is to create a LEMP stack that has WordPress on it hosted by NGINX and PHP FPM. It also has a MariaDB that communicates with it using Docker network.",
+          projectLink: "https://github.com/rimney",
+          imagePath: images.webserv
+        }
+        ,
+        {
+          projectName: "Rimney.me",
+          projectDescription:
+            "Inception is a project that focuses on containerization using Docker. The main objective of this project is to create a LEMP stack that has WordPress on it hosted by NGINX and PHP FPM. It also has a MariaDB that communicates with it using Docker network.",
+          projectLink: "https://github.com/rimney",
+          imagePath: images.minishell
+        }
+      ]
+    };
+  },
+  methods: {
+    close() {
+      console.log(this.array[1].projectName);
+      this.$emit("close");
     },
-
+  },
 };
 </script>
   
 <style scoped>
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
 
-    justify-content: center;
+.modalBody::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
 }
 
+.modalBody::-webkit-scrollbar-thumb {
+  background-color: #888; /* Set the color of the scrollbar thumb */
+  border-radius: 5px; /* Optional: round the corners of the thumb */
+}
 
+.modalBody::-webkit-scrollbar-track {
+  background-color: #1e1b1b; /* Set the color of the scrollbar track */
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+}
 
 .modal-inner {
-    width: 500px;
-    height: 670px;
-    background-color: white;
-    border-radius: 0.5em;
-    padding: 1em;
-    margin: auto;
-    background-color: rgba(36, 36, 36, 36);
-    border: white solid 0.5px;
-
+  width: 500px;
+  height: 670px;
+  background-color: white;
+  border-radius: 0.5em;
+  padding: 1em;
+  margin: auto;
+  background-color: rgba(36, 36, 36, 36);
+  border: white solid 0.5px;
 }
 
 .header {
-    width: 500px;
-    height: 20px;
-    display: flex;
-    margin-bottom: 30px;
-    align-items: center;
+  width: 500px;
+  height: 20px;
+  display: flex;
+  margin-bottom: 30px;
+  align-items: center;
 }
 
 .buttons {
-    display: flex;
-    padding-right: 160px;
+  display: flex;
+  padding-right: 160px;
 }
 
-
 .closeX {
-    cursor: pointer;
-    margin-right: 5px;
-    font-size: 12px;
-    color: white;
-    width: 12px;
-    height: 12px;
-    background-color: rgb(240, 97, 80);
-    display: flex;
-    border-radius: 100px;
-    justify-content: space-around;
-    align-content: space-between;
-    align-items: flex-end;
+  cursor: pointer;
+  margin-right: 5px;
+  font-size: 12px;
+  color: white;
+  width: 12px;
+  height: 12px;
+  background-color: rgb(240, 97, 80);
+  display: flex;
+  border-radius: 100px;
+  justify-content: space-around;
+  align-content: space-between;
+  align-items: flex-end;
 }
 
 .closeY {
-    cursor: pointer;
+  cursor: pointer;
 
-    margin-right: 5px;
-    font-size: 12px;
-    color: white;
-    width: 12px;
-    height: 12px;
-    background-color: rgb(82, 82, 82);
-    display: flex;
-    border-radius: 100px;
-    justify-content: space-around;
-    align-content: space-between;
-    align-items: flex-end;
+  margin-right: 5px;
+  font-size: 12px;
+  color: white;
+  width: 12px;
+  height: 12px;
+  background-color: rgb(82, 82, 82);
+  display: flex;
+  border-radius: 100px;
+  justify-content: space-around;
+  align-content: space-between;
+  align-items: flex-end;
 }
 
 .modalBody {
-    width: 100%;
-    height: 600px;
-    overflow: scroll;
+  width: 100%;
+  height: 600px;
+  overflow: scroll;
 }
 
 .project {
-    margin-top: 20px;
-    background-color: rgb(50, 50, 50);
-    width: 100%;
-    height: 200px;
-    border-radius: 14px;
-    margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: rgb(50, 50, 50);
+  width: 100%;
+  height: 210px;
+  border-radius: 14px;
+  margin-bottom: 20px;
 }
 
 .projectContainer {
-    /* background-color: red; */
+  /* background-color: red; */
 
-    display: flex;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 .projectData {
-
-    display: flex;
-    width: 50%;
-    height: 100%;
-    flex-direction: column;
+  display: flex;
+  width: 50%;
+  height: 100%;
+  flex-direction: column;
 }
 
 .projectTitle {
-    width: 100%;
-    height: 50%;
-    background-color: red;
+  width: 100%;
+  height: 25%;
+  display: flex;
+  margin-left: 7px;
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* background-color: red; */
 }
 
 .projectDescription {
-    width: 100%;
-    height: 50%;
-    background-color: blue;
-}
-
-.projectImage
-{
-    background-color: green;
-    width : 50%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+padding-left: 7px;
+    /* align-items: center; */
+    /* text-align: center; */
     display: flex;
+    width: 100%;
+    height: 80%;
+    /* background-color: blue; */
+    font-size: 14px;
+    flex-direction: column;
+
 }
 
-.projectImage .img
+.projectDescription p 
 {
-    border-radius: 120px;
-    width : 180px;
-    height: 180px;
-    background-color: black;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.projectDescription a
+{
+  text-decoration: none;
+  color : white;
+}
+
+.projectImage {
+  /* background-color: green; */
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.projectImage img {
+  border-radius: 100px;
+  width: 190px;
+  height: 190px;
 }
 </style>

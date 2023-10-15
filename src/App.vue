@@ -23,18 +23,36 @@ import MyDock from './components/MyDock.vue'
 </script>
 
 <style> 
-body
-{
+
+
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  overflow:hidden;
+  overflow: hidden;
   background-image: url('img/wall.jpg');
-  background-size: 1900px 1080px;
+  background-size: cover;
   background-repeat: no-repeat;
-
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+  min-width: 600px;
 }
-#app
-{
 
+@media screen and (max-width: 640px) {
+  body {
+    background-image: url('img/iphone.jpg');
+    background-color: green;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+#app {
+  /* Additional styles for your app container */
+}
+
+.container {
+  /* Styles for your main container */
 }
 </style>
 
