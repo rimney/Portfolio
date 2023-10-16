@@ -1,5 +1,5 @@
 <template>
-    <div class="Dock">
+    <div class="Dock" v-if="showDock">
         <div class="dockIcons">
           <div class="dockIcon">
             <img src="../img/contact.png" alt="">
@@ -25,9 +25,15 @@
   
   <script>
     export default {
+  data () {
+    return {
+      showDock : true
+    }
+  },
         name : 'MyDock',
         components : {
         }
+        
     }
   </script>
   

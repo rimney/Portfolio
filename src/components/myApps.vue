@@ -7,14 +7,14 @@
                 <span>Resume</span>
             </div>
             <div class="icon">
-                <img  @click="openProjectsModal" src="../img/finder.png" alt="">
+                <img @click="openProjectsModal" src="../img/finder.png" alt="">
                 <projectsModal v-show="isProjectsModalVisible" @close="closeProjectsModal"></projectsModal>
                 <span>Projects</span>
             </div>
             <div class="icon">
                 <img @click="openContactModal" src="../img/contact.png" alt="">
                 <contactModal v-show="isContactModalVisible" @close="closeContactModal"></contactModal>
-                
+
                 <span>Contact</span>
             </div>
             <div class="icon">
@@ -27,56 +27,64 @@
             </div>
 
         </div>
+
     </div>
+    <MyDock v-show="showDock"></MyDock>
 </template>
 <script>
 import resumeModal from './resumeModal.vue';
 import contactModal from './contactModal.vue';
 import ProjectsModal from './projectsModal.vue';
+import MyDock from './MyDock.vue'
+
 export default {
     data() {
         return {
-            isResumeModalVisible : false,
-            isContactModalVisible : false,
-            isProjectsModalVisible : false,
-            
+            windowWidth: window.innerWidth,
+            windowHeight: window.innerHeight,
+            isResumeModalVisible: false,
+            isContactModalVisible: false,
+            isProjectsModalVisible: false,
+            showDock : true,
         }
     },
-    components : {
-    resumeModal,
-    contactModal,
-    ProjectsModal
-},
+    components: {
+        MyDock,
+        resumeModal,
+        contactModal,
+        ProjectsModal, 
+    },
     name: 'MyApps',
-    methods : {
+    methods: {
         openResumeModal() {
-        this.isResumeModalVisible = true;
-      },
-      closeResumeModal() {
-        this.isResumeModalVisible = false;
-      },
+            this.isResumeModalVisible = true;
+        },
+        closeResumeModal() {
+            this.isResumeModalVisible = false;
+        },
         openProjectsModal() {
-        this.isProjectsModalVisible = true;
-      },
-      closeProjectsModal() {
-        this.isProjectsModalVisible = false;
-      },
+            if(this.windowWidth <= 600)
+                this.showDock = false;
+            this.isProjectsModalVisible = true;
+        },
+        closeProjectsModal() {
+            this.showDock = true;
+            this.isProjectsModalVisible = false;
+        },
         openContactModal() {
-        this.isContactModalVisible = true;
-      },
-      closeContactModal() {
-        this.isContactModalVisible = false;
-      },
-      goToLinkedin()
-      {
-        window.open('https://www.google.com', '_blank');
+            this.isContactModalVisible = true;
+        },
+        closeContactModal() {
+            this.isContactModalVisible = false;
+        },
+        goToLinkedin() {
+            window.open('https://www.google.com', '_blank');
 
-      },
-      goToGithub()
-      {
-        window.open('https://www.google.com', '_blank');
+        },
+        goToGithub() {
+            window.open('https://www.google.com', '_blank');
 
-      },
+        },
     }
 }
 </script>
@@ -86,22 +94,24 @@ export default {
     height: 800px;
     /* background-color: green; */
     margin-top: 2%;
+    /* overflow: hidden; */
 }
 
 .apps img {
-    cursor:pointer;
+    cursor: pointer;
 
     width: 65px;
     height: 65px;
     border-radius: 7px;
 
 }
-.icon span
-{
-    cursor:pointer;
+
+.icon span {
+    cursor: pointer;
 
 }
-.icons{
+
+.icons {
 
     display: flex;
     justify-content: center;
@@ -115,7 +125,7 @@ export default {
 
     height: 100px;
     font-size: 15px;
-    color : white;
+    color: white;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -125,22 +135,25 @@ export default {
 
 @media screen and (max-width: 640px) {
 
-.apps {
-    width: 100%;
-    height: 800px;
-    /* background-color: green; */
-    margin-top: 2%;
-}
+    .apps {
+        width: 100%;
+        height: 100%;
+        /* background-color: green; */
+        margin-top: 2%;
+        position: fixed;
+        top: 0%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
-.icons{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-content: flex-start;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 40px;
+    .icons {
+        /* width: 100%; */
+        display: flex;
+        justify-content: space-around;
+        align-content: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
 }
-}
-
 </style>
