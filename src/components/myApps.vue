@@ -56,10 +56,13 @@ export default {
     },
     name: 'MyApps',
     methods: {
-        openResumeModal() {
+        openResumeModal() {            
+            if(this.windowWidth <= 600)
+                this.showDock = false;
             this.isResumeModalVisible = true;
         },
         closeResumeModal() {
+            this.showDock = true;
             this.isResumeModalVisible = false;
         },
         openProjectsModal() {
@@ -72,9 +75,12 @@ export default {
             this.isProjectsModalVisible = false;
         },
         openContactModal() {
-            this.isContactModalVisible = true;
-        },
-        closeContactModal() {
+            if(this.windowWidth <= 600)
+            this.showDock = false;
+        this.isContactModalVisible = true;
+    },
+    closeContactModal() {
+            this.showDock = true;
             this.isContactModalVisible = false;
         },
         goToLinkedin() {

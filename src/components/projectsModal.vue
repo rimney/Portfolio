@@ -1,9 +1,10 @@
 <template>
+    
     <div class="modal">
         <div class="modal-inner">
-            <div class="header">
-                <div class="buttons">
-                    <div @click="close" class="exitPhone" v-show="windowWidth <= 600">
+                <div class="header">
+                    <div class="buttons">
+                        <div @click="close" class="exitPhone" v-show="windowWidth <= 600">
                         <span>X</span>
                     </div>
                     <div class="closeX" @click="close"><span>x</span></div>
@@ -34,6 +35,7 @@
             </div>
         </div>
     </div>
+
 </template>
 
 <script>
