@@ -25,7 +25,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   overflow: hidden;
   /* background-image: url('img/wall.jpg'); */
-  background-image: url('img/wall.jpeg');
+  background-image: url('img/wall.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -38,7 +38,7 @@ body {
 
 @media screen and (min-width: 640px) {
   body {
-    background-image: url('img/wall.jpeg');
+    background-image: url('img/wall.jpg');
     background-color: green;
     background-size: cover;
     background-position: center center;
