@@ -4,8 +4,8 @@
         <div class="modal-inner">
                 <div class="header">
                     <div class="buttons">
-                        <div @click="close" class="exitPhone" v-show="windowWidth <= 600">
-                        <span>X</span>
+                        <div @click="close" class="closePhone">
+                        <img src="../img/exitPhoneWhite.png" alt="">
                     </div>
                     <div class="closeX" @click="close"><span>x</span></div>
                     <div class="closeY" @click="close"></div>
@@ -99,7 +99,7 @@ export default {
     /* Optional: round the corners of the thumb */
 }
 
-.exitPhone {
+.closePhone {
     display: none;
 }
 
@@ -259,9 +259,15 @@ export default {
 }
 
 @media screen and (max-width: 640px) {
-    .exitPhone {
-        margin-left: 6vw;
-        display: block;
+    .closePhone {
+        margin-left: 12vw;
+    margin-top: 6vw;
+    display: block;
+    }
+    .closePhone img 
+    {
+        width : 38px;
+        height: 40px;
     }
 
     header {
@@ -312,7 +318,6 @@ export default {
     .modal-inner {
         width: 100vw;
         height: 100vh;
-        transition: all 0.3s ease;
     }
 
     .projects {
@@ -412,7 +417,8 @@ export default {
         height: 40vh;
         border-top-right-radius: 50px;
         border-top-left-radius: 50px;
-
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
 
     }
 

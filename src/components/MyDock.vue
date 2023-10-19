@@ -14,7 +14,7 @@
             <img src="../img/github.png" alt="">
           </div>
           <div class="dockIcon">
-            <img src="../img/darkmode.png" alt="">
+            <img src="../img/finder.png" alt="">
           </div>
 
 

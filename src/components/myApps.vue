@@ -7,9 +7,8 @@
                 <span>Resume</span>
             </div>
             <div class="icon">
-                <img @click="openProjectsModal" src="../img/finder.png" alt="">
-                <projectsModal v-show="isProjectsModalVisible" @close="closeProjectsModal"></projectsModal>
-                <span>Projects</span>
+                <img @click="goToLinkedin" src="../img/linkedin.png" alt="">
+                <span>LinkedIn</span>
             </div>
             <div class="icon">
                 <img @click="openContactModal" src="../img/contact.png" alt="">
@@ -18,8 +17,9 @@
                 <span>Contact</span>
             </div>
             <div class="icon">
-                <img @click="goToLinkedin" src="../img/linkedin.png" alt="">
-                <span>LinkedIn</span>
+                <img @click="openProjectsModal" src="../img/projects.png" alt="">
+                <projectsModal v-show="isProjectsModalVisible" @close="closeProjectsModal"></projectsModal>
+                <span>Projects</span>
             </div>
             <div class="icon">
                 <img @click="goToGithub" src="../img/github.png" alt="">

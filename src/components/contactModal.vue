@@ -90,6 +90,10 @@ export default {
     justify-content: center;
 }
 
+.closePhone
+{
+    display:none;
+}
 .contactInfoPhone {
     display: none;
 }
@@ -266,7 +270,7 @@ export default {
 
     .closePhone {
         margin-top: 20vh;
-        margin-right: 6vw;
+        margin-right: 7vw;
         display: block;
     }
 
