@@ -2,22 +2,19 @@
     <div class="Dock" v-if="showDock">
         <div class="dockIcons">
           <div class="dockIcon">
-            <img src="../img/contact.png" alt="">
+            <img @click="openContactModalInternal" src="../img/contact.png" alt="">
           </div>
           <div class="dockIcon">
-            <img id="emailimg" src="../img/email.png" alt="">
+            <img id="emailimg" src="../img/email.png" @click="sendEmail"  alt="">
+            
           </div>
           <div class="dockIcon">
             <img id="calendarImg" src="../img/calendar.png" alt="">
           </div>
+ 
           <div class="dockIcon">
-            <img src="../img/github.png" alt="">
+            <img @click="openAboutMeModalInternal" src="../img/finder.png" alt="">
           </div>
-          <div class="dockIcon">
-            <img src="../img/finder.png" alt="">
-          </div>
-
-
 
         </div>
     </div>
@@ -25,6 +22,18 @@
   
   <script>
     export default {
+  methods: {
+    openContactModalInternal() {
+            this.$emit('open-contact-modal'); // Emitting a custom event
+        },
+    openAboutMeModalInternal() {
+            this.$emit('open-about-me-modal'); // Emitting a custom event
+        },
+    sendEmail() {
+      const email = "rimney13@gmail.com"; // Replace EMAILADDRESS with the recipient's email address
+      window.location.href = `mailto:${email}`;
+    }
+  },
   data () {
     return {
       showDock : true

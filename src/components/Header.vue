@@ -16,6 +16,7 @@
                 <span>Contact</span>
             </div>
             <div class="rightSide">
+                <img src="../img/wifi.png" alt="">
                 <img src="../img/siriIcon.png" alt="">
                 <span>{{ currentDateTime }}</span> <!-- Display current date and time here -->
             </div>
@@ -114,7 +115,7 @@ header {
     color: white;
     display: flex;
     margin-right: 20px;
-    width: 350px;
+    width: 200px;
     align-content: space-between;
     flex-direction: row;
     flex-wrap: nowrap;

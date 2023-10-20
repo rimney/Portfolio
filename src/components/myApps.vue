@@ -11,10 +11,16 @@
                 <span>LinkedIn</span>
             </div>
             <div class="icon">
-                <img @click="openContactModal" src="../img/contact.png" alt="">
+                <img @open-contact-modal="openContactModal" @click="openContactModal" src="../img/contact.png" alt="">
                 <contactModal v-show="isContactModalVisible" @close="closeContactModal"></contactModal>
 
                 <span>Contact</span>
+            </div>
+            <div class="icon">
+                <img @open-about-me-modal="openAboutMeModal" @click="openAboutMeModal" src="../img/finder.png" alt="">
+                <AboutMeModal v-show="isAboutMeModalVisible" @close="closeAboutMeModal"></AboutMeModal>
+
+                <span>About Me</span>
             </div>
             <div class="icon">
                 <img @click="openProjectsModal" src="../img/projects.png" alt="">
@@ -29,13 +35,14 @@
         </div>
 
     </div>
-    <MyDock v-show="showDock"></MyDock>
+    <MyDock v-show="showDock" @open-about-me-modal="openAboutMeModal"></MyDock>
 </template>
 <script>
 import resumeModal from './resumeModal.vue';
 import contactModal from './contactModal.vue';
 import ProjectsModal from './projectsModal.vue';
 import MyDock from './MyDock.vue'
+import AboutMeModal from './aboutMeModal.vue';
 
 export default {
     data() {
@@ -46,14 +53,16 @@ export default {
             isContactModalVisible: false,
             isProjectsModalVisible: false,
             showDock : true,
+            isAboutMeModalVisible: false,
         }
     },
     components: {
-        MyDock,
-        resumeModal,
-        contactModal,
-        ProjectsModal, 
-    },
+    MyDock,
+    resumeModal,
+    contactModal,
+    ProjectsModal,
+    AboutMeModal
+},
     name: 'MyApps',
     methods: {
         openResumeModal() {            
@@ -80,17 +89,30 @@ export default {
         this.isContactModalVisible = true;
     },
     closeContactModal() {
-            this.showDock = true;
+        this.showDock = true;
             this.isContactModalVisible = false;
         },
         goToLinkedin() {
             window.open('https://www.google.com', '_blank');
-
+            
         },
         goToGithub() {
             window.open('https://www.google.com', '_blank');
-
+            
         },
+        openAboutMeModal()
+        {
+            if(this.windowWidth <= 600)
+                this.showDock = false;
+            this.isAboutMeModalVisible = true;
+        },
+
+        closeAboutMeModal()
+        {
+            this.showDock = true;
+            this.isAboutMeModalVisible = false;
+        }
+        ,
     }
 }
 </script>
