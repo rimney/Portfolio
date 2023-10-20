@@ -213,7 +213,7 @@ export default {
 {
     background-color: rgb(28, 27, 29);
     width : 100%;
-    height: 20%;
+    height: 12%;
 }
 
 .subtitle span
