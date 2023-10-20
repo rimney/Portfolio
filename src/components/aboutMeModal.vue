@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="description">
-                <p>Software engineer with expertise in building cutting-edge web applications. My skills are allowing me to
+                <p>I'm Riyad Mney a 1337 coding school student and a passionate Software engineer with expertise in building cutting-edge web applications. My skills are allowing me to
                     create seamless and user-friendly experiences.</p>
                 <span id="skills">Skills</span>
                 <p>ReactJS | VueJS | HTML | CSS | TailWind | JavaScript | TypeScript | Docker | Git | C | C++ | Unix | SQL |
@@ -29,15 +29,63 @@
             <div class="phoneContainer">
                 <div class="pContainer">
                     <div class="subtitle">
-                        <span>FRAMEWORKS</span>
+                        <span>RIYAD MNEY</span>
                     </div>
                     <div class="title">
-                            <span>List Of Technologies I Use</span>
+                        <span>Sofwtare Engineer</span>
                     </div>
                     <div class="images">
-
+                        <p>I'm Riyad Mney a 1337 coding school student and a passionate Software engineer with expertise in building cutting-edge web applications. My skills are allowing me to
+                    create seamless and user-friendly experiences.</p>
                     </div>
                 </div>
+                <div class="pContainer">
+                    <div class="subtitle">
+                        <span>SKILLS</span>
+                    </div>
+                    <div class="title">
+                        <span>Languages And Framworks </span>
+                    </div>
+                    <div class="images">
+                        <div class="icon">
+                            <img src="../img/tailwind.png" alt="">
+                        </div>
+                        <div class="icon">
+                            <img src="../img/css.png" alt="">
+                        </div>
+                        <div class="icon">
+                            <img src="../img/hmtl.png" alt="">
+                        </div>
+                        <div class="icon">
+                            <img src="../img/docker.svg" alt="">
+                        </div>
+                        <div class="icon">
+                            <img src="../img/javascript.png" alt="">
+                        </div>
+                        <div class="icon">
+                            <img src="../img/typescript.svg" alt="">
+                        </div>
+                        <div class="icon">
+                            <img src="../img/nest.svg" alt="">
+                        </div>
+                        <div class="icon">
+                            <img src="../img/git.png" alt="">
+                        </div>
+                        <div class="icon">
+                            <img src="../img/bootsrap.png" alt="">
+                        </div>
+                        <div class="icon">
+                            <img src="../img/c++.png" alt="">
+                        </div>
+                        <div class="icon">
+                            <img src="../img/react.png" alt="">
+                        </div>
+                        <div class="icon">
+                            <img src="../img/vue.png" alt="">
+                        </div>
+                    </div>
+                </div>
+ 
 
             </div>
         </div>
@@ -186,115 +234,133 @@ export default {
     flex-direction: column;
     align-content: center;
     align-items: center;
-    
+
 }
 
 .description p {
     text-align: center;
-    
+
 }
 
 @media screen and (max-width: 640px) {
-    
-    
-    .subtitle
-    {
+
+
+    .subtitle {
         background-color: rgb(28, 27, 29);
-        width : 100%;
+        width: 100%;
         height: 10%;
         border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    display: flex;
-    align-items: center;
-    color : rgb(150, 150, 156)
-}
+        border-top-right-radius: 30px;
+        display: flex;
+        align-items: center;
+        color: rgb(150, 150, 156)
+    }
 
-.title
-{
-    background-color: rgb(28, 27, 29);
-    width : 100%;
-    height: 12%;
-}
+    .title {
+        background-color: rgb(28, 27, 29);
+        width: 100%;
+        height: 12%;
+    }
 
-.subtitle span
-{
-    padding-left: 12px;
-    font-weight: 550;
-}
+    .subtitle span {
+        padding-left: 12px;
+        font-weight: 550;
+    }
 
-.title span
-{
-    font-weight: 550;
-    font-size: 26px;
-    padding-left: 12px;
-}
+    .title span {
+        font-weight: 550;
+        font-size: 26px;
+        padding-left: 12px;
+    }
 
-.images
-{
+    .images {
+        display: flex;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    /* background-color: rgb(28, 27, 29); */
-    background-color: red;
-    width : 100%;
-    height: 70%;
-}
+    background-color: rgb(28, 27, 29);
+    background-color: rgb(50 50 50 / 84%);
+    width: 100%;
+    height: 35vh;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+        
 
-.phoneContainer
-{
-    overflow-y: scroll;
+    }
+
+    .icon img{
+        margin: 12px;
+        border-radius: 7px;
+        width : 75px;
+        height: 75px;
+        object-fit:cover;
+
+    }
+
+    .phoneContainer {
+        overflow-y: scroll;
     display: block;
     background-color: black;
-    height: 100vh;
-    width : 100vw;
+    width: 100vw;
+    height: 120vh;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
-}
+    flex-direction: column;
+    align-items: center;
 
-.pContainer
-{
-    min-width: 400px;
-    /* width: 80%; */
-    border-radius: 30px;
-    margin: 40px;
-    /* min-width : 80vw; */
-    height: 50vh;
-}
+    }
+
+    .pContainer {
+        min-width: 400px;
+        width: 90%;
+        border-radius: 30px;
+        /* min-width : 80vw; */
+        height: 50vh;
+    }
+    .pContainer p
+    {
+        margin-left: 10px;
+        font-size: 3vh;
+    }
+
+  
+
     .description {
         display: none;
     }
-    
+
     .closePhone img {
         margin-left: 5vw;
-        
+
         width: 38px;
         height: 40px;
-        
+
     }
-    
+
     .closePhone {
-        /* margin-top: 20vh; */
-        margin-right: 6vw;
+        margin-top: 4vh;
+        margin-left: 7vw;
         display: block;
     }
-    
-    
+
+
     header {
         display: none;
     }
-    
+
     #about {
         display: none;
     }
-    
+
     .closeY {
         display: none;
     }
-    
+
     .closeX {
         display: none;
     }
-    
+
     .header {
         font-size: 20px;
         width: 41vw;
@@ -306,10 +372,13 @@ export default {
         font-family: unset;
         color: rgb(29, 131, 246);
     }
-    
+
     .modal {
+        overflow-y: scroll;
+        overflow-x: hidden;
+
         position: fixed;
-        top: -2vh;
+        top: -1vh;
         /* left: -0.1vh; */
         width: 100vw;
         /* Full width of viewport */
@@ -323,15 +392,15 @@ export default {
         z-index: 9999;
         /* Ensure it's above all other elements */
     }
-    
+
     .modal-inner {
         width: 100vw;
-        height: 100vh;
+        height: 120%;
         transition: all 0.3s ease;
-        background-color: green;
-        
+        background-color: black;
+
     }
-    
+
     .modalBody {
         display: none;
     }
