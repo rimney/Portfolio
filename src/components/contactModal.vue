@@ -30,7 +30,8 @@
                         <span>Rimney13@gmail.com</span>
                         <span>Rimney</span>
                         <span>(+212)0680344281</span>
-                        <span>Rimney13</span>
+                        <span id="linkedIn"><a href="https://www.linkedin.com/in/riyad-mney-28100b188?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">riyad mney</a></span>
+
 
                     </div>
                 </div>
@@ -40,16 +41,16 @@
                         <span id="infoData">+212 6 80 34 42 81</span>
                     </div>
                     <div class="Datacontainer">
-                        <span id="infoTitle">Mobile</span>
-                        <span id="infoData">+212 6 80 34 42 81</span>
+                        <span id="infoTitle">Email</span>
+                        <span id="infoData">rimney13@gmail.com</span>
                     </div>
                     <div class="Datacontainer">
-                        <span id="infoTitle">Mobile</span>
-                        <span id="infoData">+212 6 80 34 42 81</span>
+                        <span id="infoTitle">Discord</span>
+                        <span id="infoData">rimney</span>
                     </div>
                     <div class="Datacontainer">
-                        <span id="infoTitle">Mobile</span>
-                        <span id="infoData">+212 6 80 34 42 81</span>
+                        <span id="infoTitle">LinkedIn</span>
+                        <span id="linkedIn"><a href="https://www.linkedin.com/in/riyad-mney-28100b188?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">riyad mney</a></span>
                     </div>
 
 
@@ -125,7 +126,8 @@ export default {
     cursor: pointer;
     margin-right: 5px;
     font-size: 12px;
-    color: white;
+    color: rgb(141,23,16);
+
     width: 12px;
     height: 12px;
     background-color: rgb(240, 97, 80);
@@ -141,7 +143,6 @@ export default {
 
     margin-right: 5px;
     font-size: 12px;
-    color: white;
     width: 12px;
     height: 12px;
     background-color: rgb(82, 82, 82);
@@ -186,6 +187,12 @@ export default {
     height: 150px;
 }
 
+#linkedIn a
+{
+    color: rgb(147, 147, 147);
+
+    /* text-decoration: none; */
+}
 .contactInfo {
     width: 100%;
     height: 200px;
@@ -235,6 +242,7 @@ export default {
     transform: translateX(100);
   }
 }
+
     .imgName {
         width: 100%;
         height: 200px;
@@ -267,7 +275,12 @@ export default {
         height: 40px;
 
     }
+    #linkedIn a
+{
+    color: rgb(24, 89, 202);
 
+    /* text-decoration: none; */
+}
     .closePhone {
         margin-top: 20vh;
         margin-right: 7vw;

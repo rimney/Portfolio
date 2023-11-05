@@ -162,7 +162,8 @@ export default {
     cursor: pointer;
     margin-right: 5px;
     font-size: 12px;
-    color: white;
+    color: rgb(141,23,16);
+
     width: 12px;
     height: 12px;
     background-color: rgb(240, 97, 80);
@@ -187,6 +188,15 @@ export default {
     align-content: space-between;
     align-items: flex-end;
 }
+
+.closeX span{
+    display: none;
+}
+
+.closeX:hover span{
+    display: block;
+}
+
 
 .modalBody {
     /* background-color: green; */
@@ -360,6 +370,13 @@ export default {
     .closeX {
         display: none;
     }
+    .closeX span{
+    display: none;
+}
+
+.closeX:hover span{
+    display: block;
+}
 
     .header {
         font-size: 20px;

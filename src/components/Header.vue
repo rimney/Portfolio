@@ -6,14 +6,16 @@
                 <img @click="toggleDropDown" src="../img/applelogoWhite.png" alt="">
                 <div v-if="isDropDownVisible" class="dropdownMenu">
                     <span @click="openModal">About Me</span>
-                    <span>Contact</span>
-                    <span>My Projects</span>
+                    <span @click="openProjectsModal" >Contact</span>
+                    <span @click="openProjectsModal">My Projects</span>
                 </div>
                 <span>Finder</span>
                 <span @click="openModal">About Me</span>
                 <AboutMeModal v-show="isModalVisible" @close="closeModal"></AboutMeModal>
-                <span>Projects</span>
-                <span>Contact</span>
+                <span  @click="openProjectsModal" >Projects</span>
+                <projectsModal v-show="isProjectsModalVisible" @close="closeProjectsModal"></projectsModal>
+                <span @click="openContactModal" >Contact</span>
+                <contactModal v-show="isContactModalVisible" @close="closeContactModal"></contactModal>
             </div>
             <div class="rightSide">
                 <img src="../img/wifi.png" alt="">
@@ -26,6 +28,10 @@
 
 <script>
 import AboutMeModal from "./aboutMeModal.vue"; // Adjust the import path based on your project structure
+import projectsModal from "./projectsModal.vue"; // Adjust the import path based on your project structure
+import contactModal from "./contactModal.vue"; // Adjust the import path based on your project structure
+
+
 
 export default {
   watch: {
@@ -33,12 +39,16 @@ export default {
     name: 'AppHeader',
     components : {
         AboutMeModal,
+        projectsModal,
+        contactModal,
     },
     data() {
         return {
             isDropDownVisible : false,
             currentDateTime: '',
             isModalVisible: false, // Add this property to manage dropdown visibility
+            isProjectsModalVisible: false, // Add this property to manage dropdown visibility
+            isContactModalVisible: false,
         };
     },
     mounted() {
@@ -67,14 +77,31 @@ export default {
       closeModal() {
         this.isModalVisible = false;
       },
+      openProjectsModal() {
+            if(this.windowWidth <= 600)
+                this.showDock = false;
+            this.isProjectsModalVisible = true;
+        },
+        closeProjectsModal() {
+            this.showDock = true;
+            this.isProjectsModalVisible = false;
+        },
+        openContactModal() {
+            if(this.windowWidth <= 600)
+                this.showDock = false;
+            this.isContactModalVisible = true;
+        },
+        closeContactModal() {
+            this.showDock = true;
+            this.isContactModalVisible = false;
+        }
     }
 }
 </script>
 
 
+
 <style scoped>
-
-
 header {
     position: fixed;
     /* Set the position to fixed */
@@ -90,6 +117,11 @@ header {
     /* Optionally, add a background color */
     z-index: 1000;
     /* rgba(255, 255, 255, 0.183)igher z-index to ensure it's above other elements */
+}
+
+header span 
+{
+    cursor: pointer;
 }
 
 .osHeader {
@@ -115,61 +147,7 @@ header {
     color: white;
     display: flex;
     margin-right: 20px;
-    width: 200px;
-    align-content: space-between;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
-
-.leftSide img {
-    width: 16px;
-    height: 18px;
-}
-</style>
-
-<style scoped>
-header {
-    position: fixed;
-    /* Set the position to fixed */
-    top: 0;
-    /* Stick the header to the top */
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 30px;
-    background-color: rgba(0, 0, 0, 0.58);
-    /* Optionally, add a background color */
-    z-index: 1000;
-    /* rgba(255, 255, 255, 0.183)igher z-index to ensure it's above other elements */
-}
-
-.osHeader {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-
-
-}
-
-.leftSide {
-    color: white;
-    display: flex;
-    margin-left: 20px;
-    width: 350px;
-    align-content: space-between;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
-
-.rightSide {
-    color: white;
-    display: flex;
-    margin-right: 20px;
-    width: 260px;
+    width: 236px;
     align-content: space-between;
     flex-direction: row;
     flex-wrap: nowrap;

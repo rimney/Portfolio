@@ -54,19 +54,18 @@ export default {
                 },
                 {
                     projectName: "Ft_transendance",
-                    projectDescription: "Inception is a project that focuses on containerization using Docker. The main objective of this project is to create a LEMP stack that has WordPress on it hosted by NGINX and PHP FPM. It also has a MariaDB that communicates with it using Docker network.",
+                    projectDescription: "ft_transendance, your ultimate ping pong gaming hub! This single-page platform offers seamless login, enabling players to connect with friends, engage in one-on-one or group chats, and even watch live streams of fellow gamers in action. Immerse yourself in the thrill of ping pong, connect with a vibrant community, and elevate your gaming experience to new heights, all in one place!",
                     projectLink: "https://github.com/rimney",
                     imagePath: images.webserv
                 },
                 {
                     projectName: "Webserv",
-                    projectDescription: "Inception is a project that focuses on containerization using Docker. The main objective of this project is to create a LEMP stack that has WordPress on it hosted by NGINX and PHP FPM. It also has a MariaDB that communicates with it using Docker network.",
-                    projectLink: "https://github.com/rimney",
+                    projectDescription: "WebServ, a cutting-edge project crafted in C++, emulates the prowess of Nginx. Acting as a robust server, it efficiently handles HTTP requests by dynamically serving files within the project. Utilizing sockets and advanced data parsing techniques, WebServ ensures seamless communication, enabling users to experience rapid and reliable web hosting. Elevate your server-side capabilities with WebServ, the epitome of high-performance web handling.",
                     imagePath: images.webserv
                 },
                 {
                     projectName: "Rimney.me",
-                    projectDescription: "Inception is a project that focuses on containerization using Docker. The main objective of this project is to create a LEMP stack that has WordPress on it hosted by NGINX and PHP FPM. It also has a MariaDB that communicates with it using Docker network.",
+                    projectDescription: "Explore Rimney.me, your gateway to my digital world. Designed as a macOS session, represented in a sleek Mac-inspired interface. Crafted with Vue.js for dynamic interactivity and infused with classic CSS charm, Rimney.me offers a journey through my skills, projects, and personality. Dive in and discover the essence of my work in a uniquely nostalgic digital experience.",
                     projectLink: "https://github.com/rimney",
                     imagePath: images.minishell
                 }
@@ -121,13 +120,12 @@ export default {
 }
 
 .modal-inner {
-    width: 80vw;
-    height: 84vh;
-    background-color: white;
+    max-width: 60vw;
+    height: 75vh;
     border-radius: 0.5em;
     padding: 1em;
     margin: auto;
-    background-color: black;
+    background-color: rgb(30, 30, 30);
     border: white solid 0.5px;
 }
 
@@ -148,7 +146,7 @@ export default {
     cursor: pointer;
     margin-right: 5px;
     font-size: 12px;
-    color: white;
+    color: rgb(141,23,16);
     width: 12px;
     height: 12px;
     background-color: rgb(240, 97, 80);
@@ -157,6 +155,14 @@ export default {
     justify-content: space-around;
     align-content: space-between;
     align-items: flex-end;
+}
+
+.closeX span{
+    display: none;
+}
+
+.closeX:hover span{
+    display: block;
 }
 
 .closeY {
@@ -185,11 +191,11 @@ export default {
     margin-top: 20px;
     background-color: rgb(50, 50, 50);
     width: 100%;
-    height: 210px;
+    height: 229px;
     border-radius: 14px;
     margin-bottom: 20px;
     transition: transform .2s;
-    /* Animation */
+    padding-bottom: 27px;
 
 }
 
@@ -316,8 +322,10 @@ export default {
     }
 
     .modal-inner {
-        width: 100vw;
-        height: 100vh;
+        max-width: 100vh;
+        width: 100vw !important;
+        height: 1400px;
+        background-color: black;
     }
 
     .projects {
@@ -331,18 +339,19 @@ export default {
         margin-top: 20px;
         background-color: rgb(50, 50, 50);
         width: 90vw;
-        height: 65vh;
+        height: 55vh;
         border-radius: 14px;
-        margin-bottom: 20px;
-        border-top-right-radius: 50px;
-        border-top-left-radius: 50px;
+        margin-top: 20vh;
+        margin-bottom: 10vh;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
     }
 
     .projectContainer {
 
         display: flex;
         width: 100%;
-        height: 100%;
+        height: 70%;
         justify-content: center;
         flex-direction: column-reverse;
     }
@@ -415,17 +424,19 @@ export default {
     .projectImage img {
         width: 100%;
         height: 40vh;
-        border-top-right-radius: 50px;
-        border-top-left-radius: 50px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
 
     }
 
     .modalBody {
         width: 100vw;
+        min-width: 80vw;
         height: 80vh;
-    }
+        
+        }
 
 
 

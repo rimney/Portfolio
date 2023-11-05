@@ -11,6 +11,8 @@
                     <div class="closeY" @click="close"></div>
                 </div>
                 <span id="about">Resume</span>
+                <span id="about"></span>
+                
             </div>
             <div class="modalBody">
                 <img src="../img/resume.png" alt="">
@@ -39,10 +41,10 @@ export default {
 <style scoped>
 .modal {
     position: fixed;
-    top: 0;
+    top: -3vh;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     align-items: center;
 
@@ -50,8 +52,8 @@ export default {
 }
 
 .modal-inner {
-    width: 500px;
-    height: 750px;
+    width: 47vw;
+    height: 77vh;
     background-color: white;
     border-radius: 0.5em;
     padding: 2em;
@@ -64,16 +66,17 @@ export default {
     display: none;
 }
 .header {
-    width: 500px;
-    height: 20px;
+    width: 100%;
+    height: 12px;
+    margin-bottom: 15px;
     display: flex;
-    margin-bottom: 30px;
-    align-items: center;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
 .buttons {
     display: flex;
-    padding-right: 160px;
 }
 
 
@@ -81,7 +84,8 @@ export default {
     cursor: pointer;
     margin-right: 5px;
     font-size: 12px;
-    color: white;
+    color: rgb(141,23,16);
+
     width: 12px;
     height: 12px;
     background-color: rgb(240, 97, 80);
@@ -90,6 +94,10 @@ export default {
     justify-content: space-around;
     align-content: space-between;
     align-items: flex-end;
+}
+#about
+{
+    margin-right: 7vh;
 }
 
 .closeY {
@@ -107,20 +115,27 @@ export default {
     align-content: space-between;
     align-items: flex-end;
 }
+.closeX span{
+    display: none;
+}
+
+.closeX:hover span{
+    display: block;
+}
 
 .modalBody {
     width: 100%;
-    height: 650px;
+    height: 80vh;
     display: flex;
     justify-content: center;
     /* background-color: green; */
 }
 
 .modalBody img {
-    width: 100%;
-    height: 660px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+    width: 60vh;
+    height: 75vh;
+
+    border-radius: 2px;
 }
 
 @media screen and (max-width: 640px) {

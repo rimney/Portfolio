@@ -23,7 +23,7 @@
                 <span>About Me</span>
             </div>
             <div class="icon">
-                <img @click="openProjectsModal" src="../img/projects.png" alt="">
+                <img  @click="openProjectsModal" src="../img/projects.png" alt="">
                 <projectsModal v-show="isProjectsModalVisible" @close="closeProjectsModal"></projectsModal>
                 <span>Projects</span>
             </div>
