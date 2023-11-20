@@ -72,22 +72,24 @@ export default {
         },
         openModal() {
             this.isDropDownVisible = false;
-        this.isModalVisible = true;
-      },
-      closeModal() {
-        this.isModalVisible = false;
-      },
-      openProjectsModal() {
-            if(this.windowWidth <= 600)
-                this.showDock = false;
-            this.isProjectsModalVisible = true;
+            this.isModalVisible = true;
         },
-        closeProjectsModal() {
-            this.showDock = true;
-            this.isProjectsModalVisible = false;
+        closeModal() {
+            this.isModalVisible = false;
         },
-        openContactModal() {
+        openProjectsModal() {
+            this.isDropDownVisible = false;
             if(this.windowWidth <= 600)
+            this.showDock = false;
+        this.isProjectsModalVisible = true;
+    },
+    closeProjectsModal() {
+        this.showDock = true;
+        this.isProjectsModalVisible = false;
+    },
+    openContactModal() {
+        this.isDropDownVisible = false;
+        if(this.windowWidth <= 600)
                 this.showDock = false;
             this.isContactModalVisible = true;
         },

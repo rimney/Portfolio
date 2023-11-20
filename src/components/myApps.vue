@@ -2,7 +2,7 @@
     <div class="apps">
         <div class="icons">
             <div class="icon">
-                <img @click="openResumeModal" src="../img/adobe.png" alt="">
+                <img  @open-resume-modal="openResumeModal" @click="openResumeModal" src="../img/adobe.png" alt="">
                 <resumeModal v-show="isResumeModalVisible" @close="closeResumeModal"></resumeModal>
                 <span>Resume</span>
             </div>
@@ -35,7 +35,7 @@
         </div>
 
     </div>
-    <MyDock v-show="showDock" @open-about-me-modal="openAboutMeModal"></MyDock>
+    <MyDock v-show="showDock" @open-resume-modal="openResumeModal" @open-contact-modal="openContactModal" @open-about-me-modal="openAboutMeModal"></MyDock>
 </template>
 <script>
 import resumeModal from './resumeModal.vue';
@@ -93,11 +93,11 @@ export default {
             this.isContactModalVisible = false;
         },
         goToLinkedin() {
-            window.open('https://www.google.com', '_blank');
+            window.open('https://linkedin.com/in/riyad-mney-28100b188', '_blank');
             
         },
         goToGithub() {
-            window.open('https://www.google.com', '_blank');
+            window.open('https://www.github.com/rimney', '_blank');
             
         },
         openAboutMeModal()

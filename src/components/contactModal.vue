@@ -74,10 +74,9 @@ export default {
             this.$emit("close");
         },
     },
-
 };
+
 </script>
-  
 <style scoped>
 .modal {
     position: fixed;
@@ -152,6 +151,13 @@ export default {
     align-content: space-between;
     align-items: flex-end;
 }
+.closeX span{
+    display: none;
+}
+
+.closeX:hover span{
+    display: block;
+}
 
 .modalBody {
     width: 100%;
@@ -168,7 +174,6 @@ export default {
 
 .myimg {
     color: rgb(147, 147, 147);
-
     display: flex;
     border-radius: 100px;
     width: 150px;
@@ -176,12 +181,11 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-
-
-
 }
 
 .myimg img {
+    border-radius: 100px;
+    border: 3px solid rgb(87, 82, 82);
     border-radius: 100px;
     width: 150px;
     height: 150px;
@@ -190,8 +194,6 @@ export default {
 #linkedIn a
 {
     color: rgb(147, 147, 147);
-
-    /* text-decoration: none; */
 }
 .contactInfo {
     width: 100%;
@@ -209,7 +211,6 @@ export default {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-end;
-
 }
 
 .contactData {

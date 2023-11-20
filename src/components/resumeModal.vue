@@ -47,12 +47,11 @@ export default {
     height: 100vh;
     display: flex;
     align-items: center;
-
     justify-content: center;
 }
 
 .modal-inner {
-    width: 47vw;
+    width: 30vw;
     height: 77vh;
     background-color: white;
     border-radius: 0.5em;
@@ -79,7 +78,6 @@ export default {
     display: flex;
 }
 
-
 .closeX {
     cursor: pointer;
     margin-right: 5px;
@@ -102,7 +100,6 @@ export default {
 
 .closeY {
     cursor: pointer;
-
     margin-right: 5px;
     font-size: 12px;
     color: white;
@@ -149,7 +146,7 @@ export default {
     }
 
     .closePhone { 
-        margin-left: 6vw;
+        margin-right: 35vw;
         display: block;
     }
 
@@ -197,8 +194,8 @@ export default {
         /* Ensure it's above all other elements */
     }
     .modalBody img {
-        width: 75%;
-        height: 80%;
+        width: 75vw;
+        height: 70vh;
         min-width: 413px;
         min-height: 600px;
         border-radius: 2px;

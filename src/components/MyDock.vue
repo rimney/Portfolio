@@ -9,7 +9,7 @@
             
           </div>
           <div class="dockIcon">
-            <img id="calendarImg" src="../img/calendar.png" alt="">
+            <img @click="openResumeModal" id="resume" src="../img/adobe.png" alt="">
           </div>
  
           <div class="dockIcon">
@@ -29,6 +29,10 @@
     openAboutMeModalInternal() {
             this.$emit('open-about-me-modal'); // Emitting a custom event
         },
+    openResumeModal()
+    {
+      this.$emit('open-resume-modal');
+    },
     sendEmail() {
       const email = "rimney13@gmail.com"; // Replace EMAILADDRESS with the recipient's email address
       window.location.href = `mailto:${email}`;
@@ -65,10 +69,11 @@
 
 #calendarImg
 {
+  border-radius: 7px;
   margin-left: 7px;
-  margin-top: 5px;
-  width: 50px;
-  height: 50px;
+  margin-top: 2px;
+  width: 55px;
+  height: 55px;
 }
 .dockIcons
 {

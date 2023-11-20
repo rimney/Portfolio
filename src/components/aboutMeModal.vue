@@ -44,7 +44,7 @@
                         <span>SKILLS</span>
                     </div>
                     <div class="title">
-                        <span>Languages And Framworks </span>
+                        <span>Languages And Frameworks</span>
                     </div>
                     <div class="images">
                         <div class="icon">

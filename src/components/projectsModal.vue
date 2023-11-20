@@ -12,6 +12,7 @@
                     <div class="closeY" @click="close"></div>
                 </div>
                 <span id="about">Projects</span>
+                <span> </span>
             </div>
             <div class="modalBody">
                 <div class="projects">
@@ -23,7 +24,7 @@
                                 </div>
                                 <div class="projectDescription">
                                     <p>{{ project.projectDescription }}</p>
-                                    <a :href="project.projectLink">Read More...</a>
+                                    <a id="readMore" :href="project.projectLink">Read More...</a>
                                 </div>
                             </div>
                             <div class="projectImage">
@@ -47,27 +48,28 @@ export default {
             windowHeight: window.innerHeight,
             array: [
                 {
+                    projectName: "Rimney.me",
+                    projectDescription: "Explore Rimney.me, your gateway to my digital world. Designed as a macOS session, represented in a sleek Mac-inspired interface. Crafted with Vue.js for dynamic interactivity and infused with classic CSS charm, Rimney.me offers a journey through my skills, projects, and personality. Dive in and discover the essence of my work in a uniquely nostalgic digital experience.",
+                    projectLink: "https://github.com/rimney/Portfolio",
+                    imagePath: images.minishell
+                },
+                {
                     projectName: "Inception",
                     projectDescription: "Inception is a project that focuses on containerization using Docker. The main objective of this project is to create a LEMP stack that has WordPress on it hosted by NGINX and PHP FPM. It also has a MariaDB that communicates with it using Docker network.",
-                    projectLink: "https://github.com/rimney",
+                    projectLink: "https://github.com/rimney/inception",
                     imagePath: images.inception
                 },
                 {
                     projectName: "Ft_transendance",
                     projectDescription: "ft_transendance, your ultimate ping pong gaming hub! This single-page platform offers seamless login, enabling players to connect with friends, engage in one-on-one or group chats, and even watch live streams of fellow gamers in action. Immerse yourself in the thrill of ping pong, connect with a vibrant community, and elevate your gaming experience to new heights, all in one place!",
-                    projectLink: "https://github.com/rimney",
-                    imagePath: images.webserv
+                    projectLink: "https://github.com/baraegh/ft_transcendence",
+                    imagePath: images.trandandan
                 },
                 {
                     projectName: "Webserv",
                     projectDescription: "WebServ, a cutting-edge project crafted in C++, emulates the prowess of Nginx. Acting as a robust server, it efficiently handles HTTP requests by dynamically serving files within the project. Utilizing sockets and advanced data parsing techniques, WebServ ensures seamless communication, enabling users to experience rapid and reliable web hosting. Elevate your server-side capabilities with WebServ, the epitome of high-performance web handling.",
+                    projectLink: "https://github.com/rimney/webserv",
                     imagePath: images.webserv
-                },
-                {
-                    projectName: "Rimney.me",
-                    projectDescription: "Explore Rimney.me, your gateway to my digital world. Designed as a macOS session, represented in a sleek Mac-inspired interface. Crafted with Vue.js for dynamic interactivity and infused with classic CSS charm, Rimney.me offers a journey through my skills, projects, and personality. Dive in and discover the essence of my work in a uniquely nostalgic digital experience.",
-                    projectLink: "https://github.com/rimney",
-                    imagePath: images.minishell
                 }
             ]
         };
@@ -119,6 +121,19 @@ export default {
     justify-content: center;
 }
 
+#readMore
+{
+    margin-left: 3px;
+    border-radius: 12px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width : 100px;
+    height: 25px;
+    background-color: rgb(29, 131, 246);
+    justify-content: center;
+}
+
 .modal-inner {
     max-width: 60vw;
     height: 75vh;
@@ -130,16 +145,16 @@ export default {
 }
 
 .header {
-    width: 500px;
+    width: 94%;
     height: 20px;
     display: flex;
     margin-bottom: 30px;
     align-items: center;
+    justify-content: space-between;
 }
 
 .buttons {
     display: flex;
-    padding-right: 160px;
 }
 
 .closeX {
@@ -167,7 +182,6 @@ export default {
 
 .closeY {
     cursor: pointer;
-
     margin-right: 5px;
     font-size: 12px;
     color: white;
@@ -190,12 +204,12 @@ export default {
 .project {
     margin-top: 20px;
     background-color: rgb(50, 50, 50);
-    width: 100%;
-    height: 229px;
+    width: 58vw;
+    height: 27vh;
     border-radius: 14px;
     margin-bottom: 20px;
     transition: transform .2s;
-    padding-bottom: 27px;
+    padding-bottom: 10px;
 
 }
 
@@ -220,18 +234,13 @@ export default {
     height: 25%;
     display: flex;
     margin-left: 7px;
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* background-color: red; */
 }
 
 .projectDescription {
     padding-left: 7px;
-    /* text-align: center; */
     display: flex;
     width: 100%;
     height: 80%;
-    /* background-color: blue; */
     font-size: 14px;
     flex-direction: column;
     justify-content: space-around;
@@ -262,11 +271,13 @@ export default {
     border-radius: 100px;
     width: 190px;
     height: 190px;
+    object-fit:cover;
+
 }
 
 @media screen and (max-width: 640px) {
     .closePhone {
-        margin-left: 12vw;
+        margin-right: 30vw;
     margin-top: 6vw;
     display: block;
     }
@@ -342,7 +353,7 @@ export default {
         height: 55vh;
         border-radius: 14px;
         margin-top: 20vh;
-        margin-bottom: 10vh;
+        /* margin-bottom: 10vh; */
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
     }
@@ -366,7 +377,7 @@ export default {
         flex-direction: column;
     }
 
-    .projectTitle {
+    .projectTitle { 
         width: 100%;
         height: 25%;
         display: flex;
@@ -380,7 +391,7 @@ export default {
     .projectDescription {
         padding-left: 7px;
         justify-content: space-between;
-        margin-bottom: 2vh;
+        margin-bottom: 1vh;
         align-items: center;
         text-align: center;
         display: flex;
@@ -422,12 +433,15 @@ export default {
     }
 
     .projectImage img {
-        width: 100%;
+        width: 90vw;
         height: 40vh;
+        
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
+    object-fit:cover;
+
 
     }
 

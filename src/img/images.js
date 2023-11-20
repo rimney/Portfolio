@@ -20,7 +20,8 @@ const images = {
     darkmode: require('./darkmode.png'),
     inception: require('./inception.jpeg'),
     rimney: require('./rimney.jpeg'),
-    webserv: require('./webserv.png')
+    webserv: require('./webserv.png'),
+    trandandan: require('./trandandan.jpeg')
   };
   
   export default images;
