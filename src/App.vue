@@ -39,7 +39,6 @@ body {
 @media screen and (min-width: 640px) {
   body {
     background-image: url('img/wall.jpg');
-    background-color: green;
     background-size: cover;
     background-position: center center;
 

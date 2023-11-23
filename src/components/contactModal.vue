@@ -226,23 +226,6 @@ export default {
 
 @media screen and (max-width: 640px) {
 
-    @keyframes slide-in {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slide-out {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(100);
-  }
-}
 
     .imgName {
         width: 100%;
